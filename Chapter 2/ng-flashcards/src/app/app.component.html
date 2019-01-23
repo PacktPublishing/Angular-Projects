@@ -14,7 +14,7 @@
 </div>
 
 
-  
+
   <button *ngIf="editing; else submitBtn" class="button is-primary" type="submit" (click)="handleUpdate()" [disabled]="flashForm.invalid">Update</button>
   <ng-template #submitBtn>
 <button  class="button is-primary" type="submit" (click)="handleSubmit()" [disabled]="flashForm.invalid">Submit</button>
@@ -31,9 +31,9 @@
   <app-flash
     *ngFor="let flash of flashs"
     [flash]="flash"
-    (onToggleCard)="handleToggleCard($event)"
-    (onDelete)="handleDelete($event)"
-    (onEdit)="handleEdit($event)"
-    (onRememberedChange)="handleRememberedChange($event)"
+    (toggleCard)="handleToggleCard($event)"
+    (delete)="handleDelete($event)"
+    (edit)="handleEdit($event)"
+    (rememberedChange)="handleRememberedChange($event)"
   ></app-flash>
 </div>

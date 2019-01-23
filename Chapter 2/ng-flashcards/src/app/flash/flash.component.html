@@ -1,5 +1,5 @@
 <div class="card">
-  <header class="card-header" [ngClass]="flash.remembered" (click)="toggleCard()">
+  <header class="card-header" [ngClass]="flash.remembered" (click)="onToggleCard()">
     <p class="card-header-title">{{flash.question}}</p>
     <a href="javascript:void(0)" class="card-header-icon" aria-label="more options">
       <span class="icon">
@@ -13,7 +13,7 @@
       {{flash.answer}}
     </div>
   </div>
-  
+
   <footer class="card-footer">
     <a href="#" class="card-footer-item" (click)="markCorrect()">
       <i class="fas fa-check"></i>
