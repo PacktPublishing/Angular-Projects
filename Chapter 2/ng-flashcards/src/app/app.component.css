@@ -1,0 +1,13 @@
+form {
+  margin: 10px;
+  width: 300px
+}
+
+.flashs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clear-btn {
+  margin-left: 10px;
+}
