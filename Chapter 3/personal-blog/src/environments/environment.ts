@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  WORDPRESS_REST_URL: 'http://demo5683935.mockable.io/'
 };
 
 /*
