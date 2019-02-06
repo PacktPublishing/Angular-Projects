@@ -6,9 +6,9 @@ import { QuicklinkModule, QuicklinkStrategy } from 'ngx-quicklink';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'post/:id/:slug', loadChildren: './post/post.module#PostModule' },
+  { path: 'home', component: HomeComponent, data: {routeState: 1} },
+  { path: 'about', component: AboutComponent, data: {routeState: 2} },
+  { path: 'post/:id/:slug', loadChildren: './post/post.module#PostModule', data: {routeState: 3} },
   { path: '**', component: HomeComponent }
 ];
 
