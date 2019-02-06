@@ -4057,6 +4057,10 @@ neo-async@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
 
+ngx-quicklink@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/ngx-quicklink/-/ngx-quicklink-0.0.6.tgz#46b4494129b8f9ec7bb17a6bf22d926933d58116"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
