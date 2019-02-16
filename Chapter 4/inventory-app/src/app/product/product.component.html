@@ -1,0 +1,21 @@
+<form [formGroup]="productForm">
+    <clr-wizard #productWizard [clrWizardOpen]="true" clrWizardSize="lg" (clrWizardOnCancel)="handleClose()">
+        <clr-wizard-title>{{product? 'Edit Product' : 'Add New Product'}}</clr-wizard-title>
+        <clr-wizard-button [type]="'cancel'" (click)="handleClose()">Cancel</clr-wizard-button>
+        <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+        <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+        <clr-wizard-button [type]="'finish'" (click)="handleClose()">Finish</clr-wizard-button>
+        <clr-wizard-page>
+            <ng-template clrPageTitle>Select Device Type</ng-template>
+            ...
+        </clr-wizard-page>
+        <clr-wizard-page>
+            <ng-template clrPageTitle>Basic Info</ng-template>
+            ...
+        </clr-wizard-page>
+        <clr-wizard-page>
+            <ng-template clrPageTitle>Expiration Info</ng-template>
+            ...
+    </clr-wizard-page>
+    </clr-wizard>
+</form>
