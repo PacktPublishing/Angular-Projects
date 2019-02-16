@@ -5,7 +5,7 @@
     <clr-dg-column clrDgField="name">Name</clr-dg-column>
     <clr-dg-column>Expiration Date</clr-dg-column>
     <clr-dg-column clrDgField="active">Active</clr-dg-column>
-    <clr-dg-row *clrDgItems="let product of products$ | async; trackBy id" [clrDgItem]="product">
+    <clr-dg-row *clrDgItems="let product of products$ | async; trackBy trackById" [clrDgItem]="product">
         <clr-dg-action-overflow>
             <button class="action-item" (click)="onEdit(product)">Edit</button>
             <button class="action-item" (click)="onDelete(product)">Delete</button>
@@ -32,4 +32,8 @@
 >
 </in-delete-product-modal>
 
-<in-product></in-product>
+<in-product
+  *ngIf="productOpen"
+  [product]="selectedProduct"
+  (finish)="handleFinish($event)"
+></in-product>

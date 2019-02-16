@@ -1,21 +1,107 @@
 <form [formGroup]="productForm">
-    <clr-wizard #productWizard [clrWizardOpen]="true" clrWizardSize="lg" (clrWizardOnCancel)="handleClose()">
-        <clr-wizard-title>{{product? 'Edit Product' : 'Add New Product'}}</clr-wizard-title>
-        <clr-wizard-button [type]="'cancel'" (click)="handleClose()">Cancel</clr-wizard-button>
-        <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
-        <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
-        <clr-wizard-button [type]="'finish'" (click)="handleClose()">Finish</clr-wizard-button>
-        <clr-wizard-page>
-            <ng-template clrPageTitle>Select Device Type</ng-template>
-            ...
-        </clr-wizard-page>
-        <clr-wizard-page>
-            <ng-template clrPageTitle>Basic Info</ng-template>
-            ...
-        </clr-wizard-page>
-        <clr-wizard-page>
-            <ng-template clrPageTitle>Expiration Info</ng-template>
-            ...
+  <clr-wizard
+    #productWizard
+    [clrWizardOpen]="true"
+    clrWizardSize="lg"
+    (clrWizardOnCancel)="handleClose()"
+  >
+    <clr-wizard-title>{{
+      product ? "Edit Product" : "Add New Product"
+    }}</clr-wizard-title>
+    <clr-wizard-button [type]="'cancel'" (click)="handleClose()"
+      >Cancel</clr-wizard-button
+    >
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'" (click)="handleClose()"
+      >Finish</clr-wizard-button
+    >
+    <clr-wizard-page>
+      <ng-template clrPageTitle>Select Device Type</ng-template>
+      <div class="clr-row devices">
+        <div class="clr-col-md-6" *ngFor="let item of deviceTypes">
+          <a
+            href="javascript:void(0)"
+            class="card clickable"
+            (click)="selectDevice(item)"
+            [ngClass]="{ active: item.icon === deviceType }"
+          >
+            <div class="card-block">
+              <p class="card-text">
+                {{ item.name }}
+                <clr-icon [attr.shape]="item.icon"></clr-icon>
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
     </clr-wizard-page>
-    </clr-wizard>
+    <clr-wizard-page>
+      <ng-template clrPageTitle>Basic Info</ng-template>
+      <div formGroupName="basic">
+        <!-- Input field for Product Name -->
+        <clr-input-container>
+          <label for="product-name">Product Name *</label>
+          <input
+            clrInput
+            type="text"
+            id="product-name"
+            placeholder="IPhone X..."
+            formControlName="name"
+          />
+          <clr-control-error>This Field is Required!</clr-control-error>
+        </clr-input-container>
+        <!-- Toggle Switch for active -->
+        <div class="toggle-switch">
+          <input type="checkbox" id="active" formControlName="active" />
+          <label for="active">Active</label>
+        </div>
+        <!-- Textarea for Product Description -->
+        <clr-textarea-container>
+          <label for="description">Product Description</label>
+          <textarea
+            clrTextarea
+            id="description"
+            placeholder="Enter description here..."
+            formControlName="description"
+          ></textarea>
+        </clr-textarea-container>
+        <!-- Input FormArray for features -->
+        <label class="clr-control-label">Features</label>
+        <clr-input-container
+          formArrayName="features"
+          *ngFor="let control of basicFeatures.controls"
+        >
+          <input
+            clrInput
+            type="text"
+            [formControl]="control"
+            placeholder="IPhone X..."
+          />
+        </clr-input-container>
+        <button class="btn btn-primary" (click)="addFeature()">
+          Add Feature
+        </button>
+      </div>
+      <ng-template clrPageButtons>
+        <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+        <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+        <clr-wizard-button
+          [clrWizardButtonDisabled]="isBasicInvalid"
+          [type]="'next'"
+          >Next</clr-wizard-button
+        >
+      </ng-template>
+    </clr-wizard-page>
+    <clr-wizard-page>
+      <ng-template clrPageTitle>Expiration Info</ng-template>
+      <clr-input-container formGroupName="expiration">
+        <input type="date" clrInput clrDate formControlName="expirationDate" />
+        <clr-control-error>{{ expirationError }}</clr-control-error>
+      </clr-input-container>
+      <ng-template clrPageButtons>
+          <clr-wizard-button [clrWizardButtonDisabled]="isExpirationInvalid" (click)="handleFinish()" [type]="'finish'">Finish</clr-wizard-button>
+      </ng-template>
+    </clr-wizard-page>
+  </clr-wizard>
 </form>
