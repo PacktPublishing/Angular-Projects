@@ -1,0 +1,29 @@
+<ng-container *ngIf="(cart$ | async) as cart">
+  <h1 mat-dialog-title>Cart</h1>
+  <div mat-dialog-content>
+    <mat-list>
+      <mat-list-item *ngFor="let product of getValues(cart)">
+        <h4 mat-line>{{ product.name }}</h4>
+        <p mat-line>{{ product.salePrice | currency }}</p>
+        <mat-form-field class="count">
+          <mat-select
+            [value]="product.count"
+            (selectionChange)="onSelectionChange($event, product)"
+          >
+            <mat-option
+              *ngFor="let count of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+              [value]="count"
+            >
+              {{ count }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        {{ product.count * product.salePrice | currency }}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <h3 mat-subheader>
+        Sub Total:&nbsp;&nbsp;&nbsp; <b> {{ cart | subTotal | currency }}</b>
+      </h3>
+    </mat-list>
+  </div>
+</ng-container>
