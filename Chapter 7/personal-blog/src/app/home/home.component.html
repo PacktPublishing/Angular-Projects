@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-6" @postsAnimation *ngFor="let post of posts$ | async">
+    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <h3 class="mb-0">
+          <a class="text-dark" [routerLink]="['/post', post.id, post.slug]">{{post.title.rendered}}</a>
+        </h3>
+        <div class="mb-1 text-muted">{{post.date | date}}</div>
+        <p class="card-text mb-auto" [innerHTML]="post.excerpt.rendered"></p>
+        <a [routerLink]="['/post', post.id, post.slug]">Continue reading</a>
+      </div>
+    </div>
+  </div>
+</div>
