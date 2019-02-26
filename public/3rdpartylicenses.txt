@@ -105,6 +105,8 @@ THE SOFTWARE.
 
 @angular/material/sidenav
 
+@angular/material/snack-bar
+
 @angular/material/toolbar
 
 @angular/platform-browser
