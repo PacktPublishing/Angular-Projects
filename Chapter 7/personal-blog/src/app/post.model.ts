@@ -9,6 +9,7 @@ export interface IPost {
   excerpt: {
       rendered: string;
   };
-  date: Date;
+  date: string;
+  modified: string;
   slug: string;
 }

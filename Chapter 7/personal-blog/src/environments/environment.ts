@@ -5,7 +5,13 @@
 export const environment = {
   production: false,
   WORDPRESS_REST_URL: 'http://demo5683935.mockable.io/',
-	baseHref: '/'
+  baseHref: '/',
+  url: 'http://localhost:4200',
+  seo: {
+    description: 'I write my findings in this blog',
+    title: 'My Personal Blog',
+    author: 'My Name'
+  }
 };
 
 /*
