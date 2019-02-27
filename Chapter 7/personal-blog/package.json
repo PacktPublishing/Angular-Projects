@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:server:prod": "ng run personal-blog:server && webpack --config webpack.server.config.js --progress --colors",
+    "build:server:prod": "ng run personal-blog:server --configuration production && webpack --config webpack.server.config.js --progress --colors",
     "build:browser:prod": "ng build --prod",
     "build:prod": "npm run build:server:prod && npm run build:browser:prod",
     "server": "node local.js"

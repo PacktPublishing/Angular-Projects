@@ -19,14 +19,11 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     AboutComponent
   ],
-  imports:[
- CommonModule,
-NgtUniversalModule,
- 
- TransferHttpCacheModule,
-HttpClientModule,
- 
-    
+  imports: [
+    CommonModule,
+    NgtUniversalModule,
+    TransferHttpCacheModule,
+    HttpClientModule,
     AppRoutingModule,
     CoreModule,
     SharedModule,

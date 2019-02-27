@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WordpressService } from '../core/wordpress.service';
+import { tap, shareReplay, last } from 'rxjs/operators';
 
 @Component({
   selector: 'pb-post',
