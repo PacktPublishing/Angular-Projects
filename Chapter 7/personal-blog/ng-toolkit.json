@@ -1,0 +1,8 @@
+{
+  "universal": {
+    "project": "personal-blog",
+    "skipInstall": false,
+    "directory": ".",
+    "http": true
+  }
+}

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, Subject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
+import { environment } from './../../environments/environment';
 import { IPost } from './../post.model';
 const POSTS_URL = 'posts';
 
