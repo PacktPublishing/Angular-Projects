@@ -4,5 +4,15 @@
     "skipInstall": false,
     "directory": ".",
     "http": true
+  },
+  "serverless": {
+    "project": "personal-blog",
+    "provider": "aws",
+    "skipInstall": false,
+    "directory": ".",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
   }
 }

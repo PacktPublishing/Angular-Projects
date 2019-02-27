@@ -8,10 +8,16 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:server:prod": "ng run personal-blog:server --configuration production && webpack --config webpack.server.config.js --progress --colors",
+    "build:server:prod": "ng run personal-blog:server:production && webpack --config webpack.server.config.js --progress --colors",
     "build:browser:prod": "ng build --prod",
-    "build:prod": "npm run build:server:prod && npm run build:browser:prod",
-    "server": "node local.js"
+    "build:prod": "npm run build:browser:prod && npm run build:server:prod",
+    "server": "node local.js",
+    "build:browser:serverless": "ng build --prod --base-href /production/",
+    "build:serverless": "npm run build:browser:serverless && npm run build:server:serverless",
+    "build:prod:deploy": "npm run build:prod && npm run deploy",
+    "build:serverless:deploy": "npm run build:serverless && npm run deploy",
+    "deploy": "serverless deploy",
+    "build:server:serverless": "ng run personal-blog:server:serverless --configuration serverless && webpack --config webpack.server.config.js --progress --colors"
   },
   "private": true,
   "dependencies": {
@@ -37,7 +43,9 @@
     "ts-loader": "4.2.0",
     "@nguniversal/express-engine": "~7.0.0",
     "@nguniversal/common": "~7.0.0",
-    "cors": "~2.8.4"
+    "cors": "~2.8.4",
+    "cp-cli": "^1.1.0",
+    "aws-serverless-express": "^3.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0-beta.0",
@@ -58,6 +66,11 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.2.2"
+    "typescript": "~3.2.2",
+    "ts-loader": "4.2.0",
+    "webpack-cli": "2.1.2",
+    "opencollective": "^1.0.3",
+    "serverless": "1.26.1",
+    "serverless-apigw-binary": "^0.4.4"
   }
 }
