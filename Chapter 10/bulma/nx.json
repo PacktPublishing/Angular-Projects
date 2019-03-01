@@ -10,6 +10,12 @@
   "projects": {
     "bulma": {
       "tags": ["ba"]
+    },
+    "demo": {
+      "tags": ["app"]
+    },
+    "demo-e2e": {
+      "tags": []
     }
   }
 }
