@@ -1,13 +1,20 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, Host } from '@angular/core';
+import { DropdownMenuDirective } from './dropdown-menu.directive';
 
 @Directive({
   selector: '[baDropdownItem]',
   host: {
-    'class': 'dropdown-item'
+    'class': 'dropdown-item',
+
   }
 })
 export class DropdownItemDirective {
+  menu: DropdownMenuDirective;
 
-  constructor() { }
+  constructor(private el: ElementRef) { }
+
+  focus() {
+    this.el.nativeElement.focus();
+  }
 
 }

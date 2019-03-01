@@ -10,7 +10,6 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
   getProducts() {
-    console.log('wow');
     return this.http.get(PRODUCTS_API);
   }
 

@@ -15,11 +15,7 @@ export class DropdownDirective {
   toggle: DropdownToggleDirective;
 
   get _open() {
-    console.log(this.open)
     return this.open;
-  }
-  constructor() {
-    console.log("run")
   }
 
 }
