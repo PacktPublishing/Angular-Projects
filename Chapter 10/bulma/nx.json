@@ -1,0 +1,21 @@
+{
+  "npmScope": "ngprojects",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "bulma": {
+      "tags": ["ba"]
+    },
+    "demo": {
+      "tags": ["app"]
+    },
+    "demo-e2e": {
+      "tags": []
+    }
+  }
+}
