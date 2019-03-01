@@ -26,7 +26,15 @@ ng generate @nrwl/schematics:application demo
 ? Which tags would you like to add to the application? (used for linting) app
 
 Step 4
+yarn add bulma
 ng g d dropdown/dropdown --project bulma --export
 ng g d dropdown/dropdown-toggle --project bulma --export
 ng g d dropdown/dropdown-menu --project bulma --export
 ng g d dropdown/dropdown-item --project bulma --export
+
+Step 5
+yarn add @angular/cdk
+
+Step 6
+npm run package:bulma
+npm publish ngprojects-bulma-0.0.1.tgz --access public
