@@ -1,19 +1,26 @@
-<div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
-  <img
-    width="300"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-  />
-</div>
-
-<h2>This is an Angular CLI app built with Nrwl Nx!</h2>
-
-An open source toolkit for enterprise Angular applications. Nx is designed to
-help you create and build enterprise grade Angular applications. It provides an
-opinionated approach to application project structure and patterns.
-
-<h2>Quick Start & Documentation</h2>
-
-<a href="https://nrwl.io/nx"
-  >Watch a 5-minute video on how to get started with Nx.</a
->
+<div baDropdown>
+    <div class="dropdown-trigger">
+      <button class="button" baDropdownToggle aria-haspopup="true" aria-controls="dropdown-menu">
+        <span>Dropdown button</span>
+        <span class="icon is-small">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+    <div baDropdownMenu id="dropdown-menu" role="menu">
+      <div class="dropdown-content">
+        <a href="#" baDropdownItem>
+          Dropdown item
+        </a>
+        <a baDropdownItem>
+          Other dropdown item
+        </a>
+        <a href="#" baDropdownItem>
+          Active dropdown item
+        </a>
+        <a href="#" baDropdownItem>
+          Other dropdown item
+        </a>
+      </div>
+    </div>
+  </div>
