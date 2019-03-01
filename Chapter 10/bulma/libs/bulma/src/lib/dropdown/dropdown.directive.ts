@@ -1,13 +1,23 @@
 import { Directive } from '@angular/core';
+import { DropdownMenuDirective } from './dropdown-menu.directive';
+import { DropdownToggleDirective } from './dropdown-toggle.directive';
 
 @Directive({
   selector: '[baDropdown]',
   host: {
-    'class': 'dropdown is-active'
+    'class': 'dropdown',
+    '[class.is-active]': '_open'
   }
 })
 export class DropdownDirective {
+  open: boolean;
+  menu: DropdownMenuDirective;
+  toggle: DropdownToggleDirective;
 
+  get _open() {
+    console.log(this.open)
+    return this.open;
+  }
   constructor() {
     console.log("run")
   }

@@ -1,4 +1,5 @@
-import { Directive } from '@angular/core';
+import { Directive, Host } from '@angular/core';
+import { DropdownDirective } from './dropdown.directive';
 
 @Directive({
   selector: '[baDropdownMenu]',
@@ -8,6 +9,8 @@ import { Directive } from '@angular/core';
 })
 export class DropdownMenuDirective {
 
-  constructor() { }
+  constructor(@Host() private dropdown: DropdownDirective) {
+    this.dropdown.menu = this;
+  }
 
 }
