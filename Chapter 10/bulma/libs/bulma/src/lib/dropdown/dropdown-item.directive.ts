@@ -5,7 +5,7 @@ import { DropdownMenuDirective } from './dropdown-menu.directive';
   selector: '[baDropdownItem]',
   host: {
     'class': 'dropdown-item',
-
+    'role': 'menuitem'
   }
 })
 export class DropdownItemDirective {
