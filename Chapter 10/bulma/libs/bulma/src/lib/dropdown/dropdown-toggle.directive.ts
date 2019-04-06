@@ -1,4 +1,4 @@
-import { Directive, Host, ElementRef } from '@angular/core';
+import { Directive, Host, ElementRef, HostBinding } from '@angular/core';
 import { DropdownDirective } from './dropdown.directive';
 
 @Directive({
@@ -6,11 +6,14 @@ import { DropdownDirective } from './dropdown.directive';
   host: {
     '(click)': '_toggle($event)',
     // '(keypress)': '_toggle($event)'
+    '[attr.aria-haspopup]': 'true',
   }
 })
 export class DropdownToggleDirective {
 
-
+  @HostBinding('attr.aria-controls') get ariaControls() {
+    return this.dropdown.menu.id;
+  }
   constructor(@Host() private dropdown: DropdownDirective, public el: ElementRef) {
     this.dropdown.toggle = this;
   }

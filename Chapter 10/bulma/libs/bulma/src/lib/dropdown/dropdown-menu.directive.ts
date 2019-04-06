@@ -1,6 +1,7 @@
-import { Directive, Host, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import { Directive, Host, ContentChildren, QueryList, AfterContentInit, HostBinding } from '@angular/core';
 import { FocusKeyManager } from '@angular/cdk/a11y';
 import { ENTER } from '@angular/cdk/keycodes';
+import uniqueId from 'lodash-es/uniqueId';
 
 import { DropdownDirective } from './dropdown.directive';
 import { DropdownItemDirective } from './dropdown-item.directive';
@@ -9,6 +10,7 @@ import { DropdownItemDirective } from './dropdown-item.directive';
   selector: '[baDropdownMenu]',
   host: {
     'class': 'dropdown-menu',
+    role: 'menu',
     'tabindex': '0',
     '(keydown)': 'onKeydown($event)',
     '(click)': '_close()',
@@ -16,6 +18,8 @@ import { DropdownItemDirective } from './dropdown-item.directive';
   }
 })
 export class DropdownMenuDirective implements AfterContentInit {
+  @HostBinding('id') id: string = uniqueId('dropdown-menu-');
+
   @ContentChildren(DropdownItemDirective) items: QueryList<DropdownItemDirective>;
   public keyManager: FocusKeyManager<DropdownItemDirective>;
   model: any;
