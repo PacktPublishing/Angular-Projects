@@ -16,6 +16,18 @@
     },
     "demo-e2e": {
       "tags": []
+    },
+    "bulma-elements": {
+      "tags": ["ba"]
+    },
+    "bulma-elements-e2e": {
+      "tags": []
+    },
+    "demo-react": {
+      "tags": []
+    },
+    "demo-react-e2e": {
+      "tags": []
     }
   }
 }

@@ -61,7 +61,10 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.scss", "./node_modules/bulma/css/bulma.min.css"],
+            "styles": [
+              "apps/demo/src/styles.scss",
+              "./node_modules/bulma/css/bulma.min.css"
+            ],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -151,6 +154,245 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/demo-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "bulma-elements": {
+      "root": "apps/bulma-elements/",
+      "sourceRoot": "apps/bulma-elements/src",
+      "projectType": "application",
+      "prefix": "ngprojects",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/bulma-elements",
+            "index": "apps/bulma-elements/src/index.html",
+            "main": "apps/bulma-elements/src/main.ts",
+            "polyfills": "apps/bulma-elements/src/polyfills.ts",
+            "tsConfig": "apps/bulma-elements/tsconfig.app.json",
+            "assets": [
+              "apps/bulma-elements/src/favicon.ico",
+              "apps/bulma-elements/src/assets"
+            ],
+            "styles": [
+              "apps/bulma-elements/src/styles.scss",
+              "./node_modules/bulma/css/bulma.min.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/bulma-elements/src/environments/environment.ts",
+                  "with": "apps/bulma-elements/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "bulma-elements:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "bulma-elements:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "bulma-elements:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/bulma-elements/tsconfig.app.json",
+              "apps/bulma-elements/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/bulma-elements/jest.config.js",
+            "tsConfig": "apps/bulma-elements/tsconfig.spec.json",
+            "setupFile": "apps/bulma-elements/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "bulma-elements-e2e": {
+      "root": "apps/bulma-elements-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/bulma-elements-e2e/cypress.json",
+            "tsConfig": "apps/bulma-elements-e2e/tsconfig.e2e.json",
+            "devServerTarget": "bulma-elements:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "bulma-elements:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/bulma-elements-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "demo-react": {
+      "root": "apps/demo-react/",
+      "sourceRoot": "apps/demo-react/src",
+      "projectType": "application",
+      "prefix": "ngprojects",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/demo-react",
+            "index": "apps/demo-react/src/index.html",
+            "main": "apps/demo-react/src/main.ts",
+            "polyfills": "apps/demo-react/src/polyfills.ts",
+            "tsConfig": "apps/demo-react/tsconfig.app.json",
+            "assets": [
+              "apps/demo-react/src/favicon.ico",
+              "apps/demo-react/src/assets"
+            ],
+            "styles": ["apps/demo-react/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/demo-react/src/environments/environment.ts",
+                  "with": "apps/demo-react/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "demo-react:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "demo-react:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "demo-react:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/demo-react/tsconfig.app.json",
+              "apps/demo-react/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/demo-react/jest.config.js",
+            "tsConfig": "apps/demo-react/tsconfig.spec.json",
+            "setupFile": "apps/demo-react/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "demo-react-e2e": {
+      "root": "apps/demo-react-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/demo-react-e2e/cypress.json",
+            "tsConfig": "apps/demo-react-e2e/tsconfig.e2e.json",
+            "devServerTarget": "demo-react:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "demo-react:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/demo-react-e2e/tsconfig.e2e.json",
             "exclude": ["**/node_modules/**"]
           }
         }

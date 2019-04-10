@@ -1,0 +1,17 @@
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <button class="pagination-previous" (click)="goTo(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+  <button class="pagination-next" (click)="goTo(currentPage + 1)" [disabled]="currentPage === pageList.length">Next page</button>
+  <ul class="pagination-list">
+    <li *ngFor="let page of pageList">
+      <a
+        class="pagination-link"
+        [ngClass]="{'is-current': currentPage === page}"
+        [attr.aria-label]="'Page ' + page"
+        [attr.aria-current]="page === currentPage ? 'page': undefined"
+        (click)="goTo(page)"
+      >
+        {{page}}
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -194,6 +194,12 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/elements@7.2.7":
+  version "7.2.7"
+  resolved "https://registry.yarnpkg.com/@angular/elements/-/elements-7.2.7.tgz#cd998043b8c64a4c3cd21eac3c13d4d83fc6b3a0"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/forms@^7.0.0":
   version "7.2.7"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-7.2.7.tgz#bdffad0070e01bd0e1f6f7045909cc9aa33e59f0"
@@ -2188,6 +2194,12 @@ dns-txt@^2.0.2:
   resolved "https://registry.yarnpkg.com/dns-txt/-/dns-txt-2.0.2.tgz#b91d806f5d27188e4ab3e7d107d881a1cc4642b6"
   dependencies:
     buffer-indexof "^1.0.0"
+
+document-register-element@^1.7.2:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-1.13.1.tgz#dad8cb7be38e04ee3f56842e6cf81af46c1249ba"
+  dependencies:
+    lightercollective "^0.1.0"
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -4350,6 +4362,10 @@ license-webpack-plugin@^1.4.0:
   resolved "https://registry.yarnpkg.com/license-webpack-plugin/-/license-webpack-plugin-1.5.0.tgz#22ca0f12a884aee35bb61dfd8eab45fe36a04523"
   dependencies:
     ejs "^2.5.7"
+
+lightercollective@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.1.0.tgz#70df102c530dcb8d0ccabfe6175a8d00d5f61300"
 
 listr-silent-renderer@^1.1.1:
   version "1.1.1"
