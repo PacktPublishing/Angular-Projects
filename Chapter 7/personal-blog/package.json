@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node local.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -17,7 +17,20 @@
     "build:prod:deploy": "npm run build:prod && npm run deploy",
     "build:serverless:deploy": "npm run build:serverless && npm run deploy",
     "deploy": "serverless deploy",
-    "build:server:serverless": "ng run personal-blog:server:serverless --configuration serverless && webpack --config webpack.server.config.js --progress --colors"
+    "build:server:serverless": "ng run personal-blog:server:serverless --configuration serverless && webpack --config webpack.server.config.js --progress --colors",
+    "now-build": "true",
+    "now": "now deploy && now alias"
+  },
+  "now": {
+    "name": "ng-projects-personal-blog",
+    "alias": [
+      "ng-projects-personal-blog.now.sh"
+    ],
+    "files": [
+      "dist",
+      "package.json",
+      "local.js"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -26,26 +39,27 @@
     "@angular/compiler": "~7.2.0-rc.0",
     "@angular/core": "~7.2.0-rc.0",
     "@angular/forms": "~7.2.0-rc.0",
+    "@angular/http": "~7.2.0-rc.0",
     "@angular/platform-browser": "~7.2.0-rc.0",
     "@angular/platform-browser-dynamic": "~7.2.0-rc.0",
+    "@angular/platform-server": "~7.2.0-rc.0",
     "@angular/router": "~7.2.0-rc.0",
     "@ng-toolkit/universal": "^1.1.51",
+    "@nguniversal/common": "~7.0.0",
+    "@nguniversal/express-engine": "~7.0.0",
+    "@nguniversal/module-map-ngfactory-loader": "~7.0.0",
+    "aws-serverless-express": "^3.2.0",
     "bootstrap-scss": "^4.2.1",
     "core-js": "^2.5.4",
-    "ngx-quicklink": "^0.0.6",
-    "rxjs": "~6.3.3",
-    "tslib": "^1.9.0",
-    "zone.js": "~0.8.26",
-    "@angular/platform-server": "~7.2.0-rc.0",
-    "@angular/http": "~7.2.0-rc.0",
-    "@nguniversal/module-map-ngfactory-loader": "~7.0.0",
-    "webpack-cli": "^3.1.2",
-    "ts-loader": "4.2.0",
-    "@nguniversal/express-engine": "~7.0.0",
-    "@nguniversal/common": "~7.0.0",
     "cors": "~2.8.4",
     "cp-cli": "^1.1.0",
-    "aws-serverless-express": "^3.2.0"
+    "ngx-quicklink": "^0.0.6",
+    "now": "^14.0.3",
+    "rxjs": "~6.3.3",
+    "ts-loader": "4.2.0",
+    "tslib": "^1.9.0",
+    "webpack-cli": "^3.1.2",
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0-beta.0",

@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform, Injector } from '@angular/core';
 
-
 @Pipe({
   name: 'subTotal'
 })
