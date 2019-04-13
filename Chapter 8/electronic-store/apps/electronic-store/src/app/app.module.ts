@@ -23,6 +23,7 @@ import { CartComponent } from './cart/cart.component';
 import { SubTotalPipe } from './sub-total.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { NxModule } from '@nrwl/nx';
 
 const matDesignModules = [
   MatToolbarModule,
@@ -51,7 +52,8 @@ const matDesignModules = [
     LayoutModule,
     HttpClientModule,
     ...matDesignModules,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    NxModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
