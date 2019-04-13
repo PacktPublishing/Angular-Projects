@@ -15,7 +15,8 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "@ngprojects/*": ["libs/*"],
-      "@ngprojects/shared": ["libs/shared/src/index.ts"]
+      "@ngprojects/shared": ["libs/shared/src/index.ts"],
+      "@ngprojects/auth": ["libs/auth/src/index.ts"]
     }
   }
 }
