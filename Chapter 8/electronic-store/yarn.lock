@@ -529,6 +529,22 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@collab-ui/angular@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@collab-ui/angular/-/angular-5.0.0.tgz#0085f773aef96ba9a8f21e67cd8c7442d53e9373"
+  dependencies:
+    "@collab-ui/core" "^12.0.0"
+
+"@collab-ui/core@^12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@collab-ui/core/-/core-12.0.0.tgz#6908bb9e2085c6eb86e9c1c6dbcc96bb3c7289c2"
+  dependencies:
+    "@collab-ui/icons" "^4.17.1"
+
+"@collab-ui/icons@^4.17.1":
+  version "4.17.1"
+  resolved "https://registry.yarnpkg.com/@collab-ui/icons/-/icons-4.17.1.tgz#e98130a49a1b56006aa4f4d73abd5d016d92d52f"
+
 "@cypress/listr-verbose-renderer@0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@cypress/listr-verbose-renderer/-/listr-verbose-renderer-0.4.1.tgz#a77492f4b11dcc7c446a34b3e28721afd33c642a"
@@ -5864,6 +5880,10 @@ locate-path@^3.0.0:
   dependencies:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
+
+lodash-es@^4.17.11:
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.11.tgz#145ab4a7ac5c5e52a3531fb4f310255a152b4be0"
 
 lodash.assign@^4.2.0:
   version "4.2.0"

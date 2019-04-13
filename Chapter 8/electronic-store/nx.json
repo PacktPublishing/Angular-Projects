@@ -22,6 +22,9 @@
     },
     "es-admin-e2e": {
       "tags": []
+    },
+    "shared": {
+      "tags": []
     }
   }
 }
