@@ -13,6 +13,9 @@
     },
     "electronic-store-e2e": {
       "tags": []
+    },
+    "es-api": {
+      "tags": []
     }
   }
 }

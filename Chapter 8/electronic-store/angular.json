@@ -61,7 +61,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "electronic-store:build"
+            "browserTarget": "electronic-store:build",
+            "proxyConfig": "apps/electronic-store/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -132,6 +133,64 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        }
+      }
+    },
+    "es-api": {
+      "root": "apps/es-api",
+      "sourceRoot": "apps/es-api/src",
+      "projectType": "application",
+      "prefix": "es-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/es-api",
+            "main": "apps/es-api/src/main.ts",
+            "tsConfig": "apps/es-api/tsconfig.app.json",
+            "assets": [
+              "apps/es-api/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/es-api/src/environments/environment.ts",
+                  "with": "apps/es-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "es-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/es-api/tsconfig.app.json",
+              "apps/es-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/es-api/jest.config.js",
+            "tsConfig": "apps/es-api/tsconfig.spec.json"
           }
         }
       }
