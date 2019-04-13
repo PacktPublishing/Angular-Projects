@@ -1,0 +1,13 @@
+<button class="buy-btn" (click)="add()" mat-stroked-button color="primary" *ngIf="count === 0; else cartBtns">Buy Now</button>
+<ng-template #cartBtns>
+  <div class="btn-mimicry">
+    <button color="primary" mat-icon-button *ngIf="count === 1; else removeBtn" (click)="remove()"><mat-icon>delete</mat-icon></button>
+    <ng-template #removeBtn>
+      <button mat-icon-button color="primary"><mat-icon (click)="remove()">remove_circle_outline</mat-icon></button>
+    </ng-template>
+    {{count}}
+    <button mat-icon-button (click)="add()" color="primary">
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </div>
+</ng-template>
