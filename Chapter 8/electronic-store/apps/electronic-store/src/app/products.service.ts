@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-const PRODUCTS_API = 'http://localhost:3000/products';
+const PRODUCTS_API = '/api/products';
 
 @Injectable({
   providedIn: 'root'
