@@ -1,30 +1,61 @@
 import { Action } from '@ngrx/store';
 import { Entity } from './auth.reducer';
 
+interface AppSecrets {
+  clientId: string;
+  callbackUrl: string;
+  domain: string;
+}
+
 export enum AuthActionTypes {
-  LoadAuth = '[Auth] Load Auth',
-  AuthLoaded = '[Auth] Auth Loaded',
-  AuthLoadError = '[Auth] Auth Load Error'
+  RegisterApp= '[Auth] Register App',
+  Login = '[Auth] Login',
+  LoginSuccess = '[Auth] Login Success',
+  LoginFailure = '[Auth] Auth Login Failure',
+  LoginInProgress = '[Auth] Login In Progress',
+  HandleLoginCallback = '[Auth] Handle Login Callback',
+  Logout = '[Auth] Logout',
 }
 
-export class LoadAuth implements Action {
-  readonly type = AuthActionTypes.LoadAuth;
+export class Login implements Action {
+  readonly type = AuthActionTypes.Login;
 }
 
-export class AuthLoadError implements Action {
-  readonly type = AuthActionTypes.AuthLoadError;
-  constructor(public payload: any) {}
+export class LoginInProgress implements Action {
+  readonly type = AuthActionTypes.LoginInProgress;
 }
 
-export class AuthLoaded implements Action {
-  readonly type = AuthActionTypes.AuthLoaded;
-  constructor(public payload: Entity[]) {}
+export class HandleLoginCallback implements Action {
+  readonly type = AuthActionTypes.HandleLoginCallback;
 }
 
-export type AuthAction = LoadAuth | AuthLoaded | AuthLoadError;
+export class LoginFailure implements Action {
+  readonly type = AuthActionTypes.LoginFailure;
+  constructor() {}
+}
+
+export class LoginSuccess implements Action {
+  readonly type = AuthActionTypes.LoginSuccess;
+  constructor() {}
+}
+
+export class RegisterApp implements Action {
+  readonly type = AuthActionTypes.RegisterApp;
+  constructor(public payload: AppSecrets) { }
+}
+
+export class Logout implements Action {
+  readonly type = AuthActionTypes.Logout;
+}
+
+export type AuthAction = Login | HandleLoginCallback | LoginInProgress | LoginSuccess | LoginFailure | RegisterApp | Logout;
 
 export const fromAuthActions = {
-  LoadAuth,
-  AuthLoaded,
-  AuthLoadError
+  Login,
+  LoginInProgress,
+  LoginSuccess,
+  LoginFailure,
+  RegisterApp,
+  HandleLoginCallback,
+  Logout
 };

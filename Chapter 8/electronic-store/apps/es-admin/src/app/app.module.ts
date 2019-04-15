@@ -5,7 +5,7 @@ import { SharedModule } from '@ngprojects/shared';
 import { AuthModule } from '@ngprojects/auth';
 
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, ActionReducer, State } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import {
   APP_FEATURE_KEY,
@@ -18,6 +18,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { storeFreeze } from 'ngrx-store-freeze';
+import { storeLogger } from 'ngrx-store-logger';
+import { HttpClientModule } from '@angular/common/http';
+
+export function logger(reducer: ActionReducer<any>): any {
+  // default, no options
+  return storeLogger()(reducer);
+}
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,12 +33,13 @@ import { storeFreeze } from 'ngrx-store-freeze';
     BrowserModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     SharedModule,
+    HttpClientModule,
     NxModule.forRoot(),
     StoreModule.forRoot(
       { app: appReducer },
       {
         initialState: { app: appInitialState },
-        metaReducers: !environment.production ? [storeFreeze] : []
+        metaReducers: !environment.production ? [storeFreeze, logger] : []
       }
     ),
     EffectsModule.forRoot([AppEffects]),

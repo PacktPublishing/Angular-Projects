@@ -28,14 +28,20 @@ const getSelectedAuth = createSelector(
   getAllAuth,
   getSelectedId,
   (auth, id) => {
-    const result = auth.find(it => it['id'] === id);
+    const result = auth.find((it: any) => it.id === id);
     return result ? Object.assign({}, result) : undefined;
   }
+);
+
+const getAuthenticated = createSelector(
+  getAuthState,
+  (state: AuthState) => state.authenticated
 );
 
 export const authQuery = {
   getLoaded,
   getError,
   getAllAuth,
-  getSelectedAuth
+  getSelectedAuth,
+  getAuthenticated
 };

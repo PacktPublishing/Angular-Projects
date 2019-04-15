@@ -1,4 +1,5 @@
 import { AuthAction, AuthActionTypes } from './auth.actions';
+import * as auth0 from 'auth0-js';
 
 export const AUTH_FEATURE_KEY = 'auth';
 
@@ -18,6 +19,10 @@ export interface AuthState {
   selectedId?: string | number; // which Auth record has been selected
   loaded: boolean; // has the Auth list been loaded
   error?: any; // last none error (if any)
+  authenticated: boolean;
+  auth?: any;
+  loginInProgress: boolean;
+  loginFailed: boolean;
 }
 
 export interface AuthPartialState {
@@ -25,8 +30,11 @@ export interface AuthPartialState {
 }
 
 export const initialState: AuthState = {
+  authenticated: false,
   list: [],
-  loaded: false
+  loaded: false,
+  loginInProgress: false,
+  loginFailed: false,
 };
 
 export function authReducer(
@@ -34,11 +42,54 @@ export function authReducer(
   action: AuthAction
 ): AuthState {
   switch (action.type) {
-    case AuthActionTypes.AuthLoaded: {
+    case AuthActionTypes.Login: {
       state = {
         ...state,
-        list: action.payload,
-        loaded: true
+        loginInProgress: true,
+      };
+      break;
+    }
+    case AuthActionTypes.LoginFailure: {
+      return {
+        ...state,
+        loginInProgress: false,
+        loginFailed: true,
+      };
+      break;
+    }
+
+    case AuthActionTypes.LoginSuccess: {
+      return {
+        ...state,
+        loginInProgress: false,
+        authenticated: true,
+      };
+      break;
+    }
+    case AuthActionTypes.RegisterApp: {
+      const { clientId, callbackUrl, domain } = action.payload;
+      let authenticated = false;
+      const auth = new auth0.WebAuth({
+        clientID: clientId,
+        domain,
+        responseType: 'token id_token',
+        redirectUri: callbackUrl,
+        scope: 'openid'
+      });
+      if (localStorage.getItem('access_token')) {
+        authenticated = true;
+      }
+      state = {
+        ...state,
+        auth,
+        authenticated,
+      };
+      return state;
+    }
+    case AuthActionTypes.Logout: {
+      return {
+        ...state,
+        authenticated: false,
       };
       break;
     }
