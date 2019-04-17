@@ -29,8 +29,13 @@ export interface AuthPartialState {
   readonly [AUTH_FEATURE_KEY]: AuthState;
 }
 
+let authenticated = false;
+if (localStorage.getItem('access_token')) {
+  authenticated = true;
+}
+
 export const initialState: AuthState = {
-  authenticated: false,
+  authenticated,
   list: [],
   loaded: false,
   loginInProgress: false,
@@ -68,7 +73,6 @@ export function authReducer(
     }
     case AuthActionTypes.RegisterApp: {
       const { clientId, callbackUrl, domain } = action.payload;
-      let authenticated = false;
       const auth = new auth0.WebAuth({
         clientID: clientId,
         domain,
@@ -76,13 +80,10 @@ export function authReducer(
         redirectUri: callbackUrl,
         scope: 'openid'
       });
-      if (localStorage.getItem('access_token')) {
-        authenticated = true;
-      }
+
       state = {
         ...state,
         auth,
-        authenticated,
       };
       return state;
     }

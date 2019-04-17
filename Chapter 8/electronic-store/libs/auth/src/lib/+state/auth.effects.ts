@@ -48,6 +48,7 @@ export class AuthEffects {
     run: () => {
       localStorage.removeItem('access_token');
       localStorage.removeItem('exp');
+      this.router.navigate(['home']);
     },
     onError: () => {}
   });

@@ -21,6 +21,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { storeLogger } from 'ngrx-store-logger';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
+import { AuthGuard } from './auth.guard';
 
 export function logger(reducer: ActionReducer<any>): any {
   // default, no options
@@ -35,7 +36,7 @@ export function logger(reducer: ActionReducer<any>): any {
     RouterModule.forRoot([
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'home', loadChildren: './home/home.module#HomeModule' },
-      { path: 'secret', loadChildren: './secret/secret.module#SecretModule' },
+      { path: 'secret', loadChildren: './secret/secret.module#SecretModule', canActivate: [AuthGuard] },
     ], { initialNavigation: 'enabled' }),
     SharedModule,
     HttpClientModule,
