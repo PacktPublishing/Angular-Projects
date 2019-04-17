@@ -27,8 +27,4 @@ export class AppComponent {
       }
     }
   }
-
-  callApi() {
-    this.http.get('/api/products/secure').subscribe();
-  }
 }
