@@ -26,17 +26,6 @@ export class AppComponent {
         this.store.dispatch(new Logout());
       }
     }
-    this.store.select(authQuery.getAuthenticated).subscribe(auth => {
-      this.authenticated = auth;
-    });
-  }
-
-  loginOrLogout() {
-    if (this.authenticated) {
-      this.store.dispatch(new Logout());
-    } else {
-      this.store.dispatch(new Login());
-    }
   }
 
   callApi() {

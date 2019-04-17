@@ -20,6 +20,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { storeLogger } from 'ngrx-store-logger';
 import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './nav/nav.component';
 
 export function logger(reducer: ActionReducer<any>): any {
   // default, no options
@@ -28,10 +29,14 @@ export function logger(reducer: ActionReducer<any>): any {
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot([
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
+      { path: 'home', loadChildren: './home/home.module#HomeModule' },
+      { path: 'secret', loadChildren: './secret/secret.module#SecretModule' },
+    ], { initialNavigation: 'enabled' }),
     SharedModule,
     HttpClientModule,
     NxModule.forRoot(),
