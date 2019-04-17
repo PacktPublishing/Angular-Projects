@@ -1,0 +1,33 @@
+{
+  "npmScope": "ngprojects",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "electronic-store": {
+      "tags": []
+    },
+    "electronic-store-e2e": {
+      "tags": []
+    },
+    "es-api": {
+      "tags": []
+    },
+    "es-admin": {
+      "tags": []
+    },
+    "es-admin-e2e": {
+      "tags": []
+    },
+    "shared": {
+      "tags": []
+    },
+    "auth": {
+      "tags": []
+    }
+  }
+}

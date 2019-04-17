@@ -1,0 +1,33 @@
+<header cui-top-bar color="light">
+  <ng-container *ngTemplateOutlet="brand" ngProjectAs="brand"></ng-container>
+  <cui-top-bar-nav>
+    <ng-container *ngIf="authenticated">
+        <ng-container *ngTemplateOutlet="list"></ng-container>
+    </ng-container>
+  </cui-top-bar-nav>
+  <cui-top-bar-right>
+    <div class="cui-top-bar__user"></div>
+    <div class="cui-top-bar__logged-out">
+      <button cui-button color="blue" aria-label="myAriaLabel" (click)="loginOrLogout()">
+        {{authenticated ? 'Logout': 'Login'}}
+      </button>
+    </div>
+  </cui-top-bar-right>
+  <cui-top-bar-mobile [shouldCloseOnClick]="false">
+    <ng-container *ngTemplateOutlet="brand" ngProjectAs="brand"></ng-container>
+    <ng-container *ngIf="authenticated">
+        <ng-container *ngTemplateOutlet="list"></ng-container>
+    </ng-container>
+    <button cui-button color="blue" aria-label="myAriaLabel" (click)="loginOrLogout()">
+        {{authenticated ? 'Logout': 'Login'}}
+      </button>
+  </cui-top-bar-mobile>
+</header>
+
+<ng-template #brand>
+  <a routerLink="/home" cui-top-bar-brand icon="icon-company_32" [title]="title"></a>
+</ng-template>
+<ng-template #list>
+  <a cui-list-item routerLink="/home" routerLinkActive="active" label="Home"></a>
+  <a cui-list-item routerLink="/secret" routerLinkActive="active" label="Secure"></a>
+</ng-template>
