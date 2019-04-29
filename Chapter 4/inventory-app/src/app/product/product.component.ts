@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit, OnChanges {
   productForm: FormGroup;
   @Input() product;
   @Output() finish = new EventEmitter();
-  @ViewChild('productWizard') productWizard: ClrWizard;
+  @ViewChild('productWizard', { static: false }) productWizard: ClrWizard;
 
   deviceType = 'tablet';
 
