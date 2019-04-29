@@ -9,7 +9,7 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('flashForm') flashForm: NgForm;
+  @ViewChild('flashForm', { static: false }) flashForm: NgForm;
   editing = false;
   editingId;
   flash = {
