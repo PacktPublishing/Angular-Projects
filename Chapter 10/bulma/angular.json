@@ -27,7 +27,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/bulma/jest.config.js",
             "tsConfig": "libs/bulma/tsconfig.spec.json",
@@ -61,7 +61,10 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.scss", "./node_modules/bulma/css/bulma.min.css"],
+            "styles": [
+              "apps/demo/src/styles.scss",
+              "./node_modules/bulma/css/bulma.min.css"
+            ],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -120,7 +123,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/demo/jest.config.js",
             "tsConfig": "apps/demo/tsconfig.spec.json",
@@ -135,7 +138,7 @@
       "prefix": "",
       "architect": {
         "e2e": {
-          "builder": "@nrwl/builders:cypress",
+          "builder": "@nrwl/cypress:cypress",
           "options": {
             "cypressConfig": "apps/demo-e2e/cypress.json",
             "tsConfig": "apps/demo-e2e/tsconfig.e2e.json",
@@ -162,14 +165,15 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics"
+    "defaultCollection": "@nrwl/angular"
   },
   "schematics": {
     "@nrwl/schematics:application": {
       "style": "scss"
     },
     "@nrwl/schematics:library": {
-      "style": "scss"
+      "style": "scss",
+      "framework": "angular"
     }
   },
   "defaultProject": "bulma"
