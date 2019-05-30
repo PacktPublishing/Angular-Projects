@@ -1,2 +1,2 @@
-# Angular-8-Projects
-Angular 8 Projects, Published by Packt
+# Angular-Projects
+Angular Projects, Published by Packt
