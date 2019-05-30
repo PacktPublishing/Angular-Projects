@@ -67,8 +67,8 @@
   "devDependencies": {
     "@ngrx/store-devtools": "7.2.0",
     "ngrx-store-freeze": "0.2.4",
-    "@angular-devkit/build-angular": "~0.800.0-rc.4",
-    "@angular/cli": "~8.0.0-rc.4",
+    "@angular-devkit/build-angular": "~0.800.0",
+    "@angular/cli": "~8.0.0",
     "@angular/compiler-cli": "~8.0.0",
     "@angular/language-service": "~8.0.0",
     "@nestjs/schematics": "5.11.2",

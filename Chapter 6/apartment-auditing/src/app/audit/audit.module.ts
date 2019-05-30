@@ -21,7 +21,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    FormlyModule,
+    FormlyModule.forRoot(),
     FormlyIonicModule,
     IonicModule,
     RouterModule.forChild(routes)

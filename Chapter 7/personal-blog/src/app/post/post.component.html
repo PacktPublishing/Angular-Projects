@@ -3,5 +3,5 @@
       <a class="text-dark" href="#">{{post.title.rendered}}</a>
   </h3>
   <div class="mb-1 text-muted">{{post.date | date}}</div>
-  <p class="card-text mb-auto" [innerHTML]="post.excerpt.rendered"></p>
+  <p class="card-text mb-auto" [innerHTML]="post.content.rendered"></p>
 </div>

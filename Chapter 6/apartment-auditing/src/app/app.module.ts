@@ -9,8 +9,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormlyModule } from '@ngx-formly/core';
-import { FormlyIonicModule } from '@ngx-formly/ionic';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
@@ -31,7 +29,6 @@ const config = {
     IonicModule.forRoot(),
     AppRoutingModule,
     ReactiveFormsModule,
-    FormlyIonicModule,
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule
   ],
