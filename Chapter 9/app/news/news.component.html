@@ -1,0 +1,12 @@
+<ActionBar [title]="'NEWS' | translate" class="action-bar">
+</ActionBar>
+<GridLayout>
+    <ListView [items]="data">
+        <ng-template let-data="item">
+            <GridLayout class="list-item" [nsRouterLink]="['/detail', data.source.id]">
+                <Image [src]="data.urlToImage" class="image" stretch="aspectFill"></Image>
+                <Label [text]="data.title" class="item-title" textWrap="true"></Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

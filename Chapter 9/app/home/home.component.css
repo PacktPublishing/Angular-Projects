@@ -1,0 +1,26 @@
+.main-layout {
+    margin-top: 0;
+    margin-bottom: -2;
+}
+
+.list-item {
+    margin-bottom: 2;
+    height: 25%;
+}
+
+.item-title {
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    vertical-align: bottom;
+    padding: 16;
+    font-size: 12;
+}
+
+.button {
+    border: 1px solid black;
+    background: gray;
+    height: 5%;
+    position: fixed;
+    top: 0;
+    right: 0;
+}

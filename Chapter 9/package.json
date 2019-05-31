@@ -1,0 +1,42 @@
+{
+  "name": "HelloWorld",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "version": "0.0.0",
+  "nativescript": {
+    "id": "org.nativescript.HelloWorld",
+    "tns-ios": {
+      "version": "5.2.0"
+    }
+  },
+  "dependencies": {
+    "@angular/animations": "~7.2.0",
+    "@angular/common": "~7.2.0",
+    "@angular/compiler": "~7.2.0",
+    "@angular/core": "~7.2.0",
+    "@angular/forms": "~7.2.0",
+    "@angular/http": "~7.2.0",
+    "@angular/platform-browser": "~7.2.0",
+    "@angular/platform-browser-dynamic": "~7.2.0",
+    "@angular/router": "~7.2.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
+    "@types/webgl-ext": "0.0.30",
+    "nativescript-angular": "~7.2.0",
+    "nativescript-snackbar": "^4.1.2",
+    "nativescript-theme-core": "~1.0.4",
+    "reflect-metadata": "~0.1.12",
+    "rxjs": "~6.3.3",
+    "tns-core-modules": "~5.2.0",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
+    "@angular/cli": "^7.2.0",
+    "@angular/compiler-cli": "~7.2.0",
+    "@angular-devkit/core": "~7.2.0",
+    "@nativescript/schematics": "~0.4.0",
+    "nativescript-dev-typescript": "~0.8.0",
+    "nativescript-dev-webpack": "^0.20.0",
+    "@ngtools/webpack": "~7.2.0",
+    "typescript": "~3.1.1"
+  }
+}
