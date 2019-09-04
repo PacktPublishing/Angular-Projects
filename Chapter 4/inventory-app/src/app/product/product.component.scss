@@ -14,10 +14,6 @@
   text-align: center
 }
 
-.card-text {
-  text-align: center
-}
-
 .clr-control-container,
 textarea {
   width: 100%;
@@ -25,4 +21,8 @@ textarea {
 
 .toggle-switch {
   margin-top: 10px;
+}
+
+label.clr-control-label {
+  padding-top: 14px;
 }

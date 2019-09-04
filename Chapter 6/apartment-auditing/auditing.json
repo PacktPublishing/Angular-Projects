@@ -1,0 +1,156 @@
+{
+  "appointments" : {
+    "-LW9StPYhewGDJAfq2Bl" : {
+      "assignedTo" : "Micheal Smith",
+      "number" : 3088,
+      "status" : "complete",
+      "units" : [ {
+        "alarm" : "good",
+        "blinds" : "good",
+        "carpet" : "good",
+        "door" : "good",
+        "lights" : "bad",
+        "lightsReason" : "Lights are blinking",
+        "paint" : "good",
+        "type" : "room"
+      }, {
+        "alarm" : "good",
+        "blinds" : "good",
+        "carpet" : "good",
+        "door" : "good",
+        "lights" : "good",
+        "paint" : "good",
+        "type" : "room"
+      }, {
+        "door" : "good",
+        "floor" : "good",
+        "knobs" : "good",
+        "lights" : "good",
+        "paint" : "good",
+        "type" : "bath"
+      }, {
+        "carpet" : "good",
+        "door" : "good",
+        "lights" : "good",
+        "paint" : "good",
+        "type" : "hall"
+      }, {
+        "clean" : "good",
+        "type" : "patio"
+      }, {
+        "fridge" : "good",
+        "microwave" : "good",
+        "sink" : "good",
+        "stove" : "good",
+        "type" : "kitchen"
+      } ]
+    },
+    "-LW9nPL-VONfIPQ_Mdln" : {
+      "assignedTo" : "Micheal Smith",
+      "lightsReason" : "The reason is",
+      "number" : 3087,
+      "status" : "complete",
+      "units" : [ {
+        "alarm" : "bad",
+        "alarmReason" : "Alarm batteries are low",
+        "blinds" : "good",
+        "carpet" : "bad",
+        "carpetReason" : "Carpet has marks all over",
+        "door" : "bad",
+        "doorReason" : "The door is damaged",
+        "lights" : "bad",
+        "lightsReason" : "One of the light is not working",
+        "paint" : "good",
+        "type" : "room"
+      }, {
+        "alarm" : "good",
+        "blinds" : "good",
+        "blindsReason" : "asdfasd",
+        "carpet" : "good",
+        "door" : "good",
+        "lights" : "good",
+        "lightsReason" : "asdfas",
+        "paint" : "good",
+        "type" : "room"
+      }, {
+        "door" : "good",
+        "floor" : "bad",
+        "floorReason" : "The floor is dirty",
+        "knobs" : "good",
+        "lights" : "good",
+        "paint" : "good",
+        "type" : "bath"
+      }, {
+        "carpet" : "good",
+        "door" : "good",
+        "lights" : "good",
+        "paint" : "good",
+        "type" : "hall"
+      }, {
+        "clean" : "good",
+        "type" : "patio"
+      }, {
+        "fridge" : "good",
+        "microwave" : "good",
+        "sink" : "good",
+        "stove" : "good",
+        "type" : "kitchen"
+      } ]
+    },
+    "-LW9nSD1N2MSu_MA2FYv" : {
+      "assignedTo" : "Micheal Smith",
+      "number" : 3086,
+      "status" : "incomplete",
+      "units" : [ {
+        "blinds" : "bad",
+        "blindsReason" : "Blinds are not working",
+        "lights" : "good",
+        "type" : "room"
+      }, {
+        "type" : "room"
+      }, {
+        "type" : "bath"
+      }, {
+        "type" : "hall"
+      }, {
+        "type" : "patio"
+      }, {
+        "type" : "kitchen"
+      } ]
+    },
+    "-LW9nTYjwn2okFqJ_oQc" : {
+      "assignedTo" : "Micheal Smith",
+      "number" : 3085,
+      "units" : [ {
+        "type" : "room"
+      }, {
+        "type" : "room"
+      }, {
+        "type" : "bath"
+      }, {
+        "type" : "hall"
+      }, {
+        "type" : "patio"
+      }, {
+        "type" : "kitchen"
+      } ]
+    },
+    "-LW9nUrQuEVf5J55W90j" : {
+      "assignedTo" : "Micheal Smith",
+      "number" : 3084,
+      "units" : [ {
+        "type" : "room"
+      }, {
+        "type" : "room"
+      }, {
+        "type" : "bath"
+      }, {
+        "type" : "hall"
+      }, {
+        "type" : "patio"
+      }, {
+        "type" : "kitchen"
+      } ]
+    }
+  }
+}
