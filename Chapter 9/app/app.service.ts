@@ -10,10 +10,10 @@ export class AppService {
 
     getUrl() {
 		if (this.language === "English") {
-			return "https://demo4918783.mockable.io/en";
+			return "https://demo7831153.mockable.io/en";
 		}
 
-		return "https://demo4918783.mockable.io/es";
+		return "https://demo7831153.mockable.io/es";
 	}
 
     getNews() {

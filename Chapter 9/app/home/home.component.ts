@@ -29,11 +29,12 @@ export class HomeComponent implements OnInit {
 
     }
 
-    setIndex() {
+    setIndex(e) {
+        const selectedIndex = e.object.selectedIndex;
         const snackbar = new SnackBar();
 
-        this.appService.language = this.listPicker[this.selectedListPickerIndex];
-        this.translate.setDefaultLang(LANGUAGE_MAPPER[this.listPicker[this.selectedListPickerIndex]]);
+        this.appService.language = this.listPicker[selectedIndex];
+        this.translate.setDefaultLang(LANGUAGE_MAPPER[this.listPicker[selectedIndex]]);
         this.translate.get('LANG_UPDATED').subscribe(val => {
             snackbar.simple(val, 'red', '#067ab4', 3, false);
         });
