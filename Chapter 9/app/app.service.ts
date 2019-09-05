@@ -2,18 +2,20 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 
+const API_URL = 'https://demo7831153.mockable.io';
+
 @Injectable()
 export class AppService {
     constructor(private http: HttpClient) { }
-    language = "english";
+    language = "English";
     news;
 
     getUrl() {
-		if (this.language === "English") {
-			return "https://demo7831153.mockable.io/en";
+		if (this.language === 'English') {
+			return `${API_URL}/en`;
 		}
 
-		return "https://demo7831153.mockable.io/es";
+		return `${API_URL}/es`;
 	}
 
     getNews() {

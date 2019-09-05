@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
     }
 
-    setIndex(e) {
+    setLanguage(e) {
         const selectedIndex = e.object.selectedIndex;
         const snackbar = new SnackBar();
 
