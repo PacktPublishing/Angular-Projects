@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
   "assetGroups": [
     {
@@ -8,6 +9,7 @@
         "files": [
           "/favicon.ico",
           "/index.html",
+          "/manifest.webmanifest",
           "/*.css",
           "/*.js"
         ]
@@ -22,7 +24,8 @@
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
-    }, {
+    },
+    {
       "name": "fonts",
       "resources": {
         "urls": [
@@ -30,13 +33,19 @@
           "https://fonts.gstatic.com/**"
         ]
       }
-    }, {
-      "name": "api",
-      "resources": {
-        "urls": [
-          "http://localhost:3000/**"
-        ]
-      }
     }
-  ]
+  ],
+  "dataGroups": [{
+    "name": "api",
+    "version": 1,
+    "cacheConfig": {
+      "maxAge": "3d",
+      "maxSize": 50,
+      "strategy": "freshness",
+      "timeout": "1000"
+    },
+    "urls": [
+      "http://localhost:3000/*"
+    ]
+  }]
 }

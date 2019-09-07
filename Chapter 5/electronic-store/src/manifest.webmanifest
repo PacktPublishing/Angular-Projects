@@ -1,6 +1,6 @@
 {
   "name": "electronic-store",
-  "short_name": "es",
+  "short_name": "electronic-store",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
