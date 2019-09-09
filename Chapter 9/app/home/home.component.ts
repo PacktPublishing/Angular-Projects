@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { AppService } from "../app.service";
 import { TranslateService } from '@ngx-translate/core';
-import { SnackBar } from "nativescript-snackbar";
+import { SnackBar } from "@nstudio/nativescript-snackbar";
 
 const LANGUAGE_MAPPER = {
     English: 'en',
