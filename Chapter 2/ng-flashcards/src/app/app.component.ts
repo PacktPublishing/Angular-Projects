@@ -22,6 +22,10 @@ export class AppComponent {
     this.flashs$ = this.flashService.flashs$;
   }
 
+  trackByFlashId(index, flash) {
+    return flash.id;
+  }
+
   handleSubmit(): void {
     this.flashService.addFlash(this.flash);
     this.handleClear();
