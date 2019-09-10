@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "build:server:prod": "ng run personal-blog:server:production && webpack --config webpack.server.config.js --progress --colors",
     "build:browser:prod": "ng build --prod",
-    "build:prod": "npm run build:browser:prod && npm run build:server:prod",
+    "build:ssr": "npm run build:browser:prod && npm run build:server:prod",
     "server": "node local.js",
     "build:browser:serverless": "ng build --prod --base-href /production/",
     "build:serverless": "npm run build:browser:serverless && npm run build:server:serverless",
