@@ -58,7 +58,7 @@ export class ProductsComponent implements OnInit {
         this.productOpen = false;
     }
 
-    trackById(item) {
+    trackById(index, item) {
       return item.id;
     }
 
