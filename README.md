@@ -59,9 +59,7 @@ With the following software and hardware list you can run all code files present
 | 6        | Ionic Framework, ngx-formly                   | Windows, Mac OS X, and Linux (Any) |
 | 7        | Zeit Now                                      | Windows, Mac OS X, and Linux (Any) |
 | 8        | Nx, Auth0, NgRx, Momentum Design, ngx-charts  | Windows, Mac OS X, and Linux (Any) |
-| 9        | NativeScript, ngx-translate                   | Windows, Mac OS X, and Linux (Any) |
-|          | Android Studio                                |                                    |
-|          | NativeScript Playground                       | Android/iOS                        |
+| 9        | NativeScript, ngx-translate, Android Studio   | Windows, Mac OS X, and Linux (Any) |                                       |          | NativeScript Playground                       | Android/iOS                        |
 |          | XCode                                         | Mac OS X                           |
 | 10       | Angular CDK                                   | Windows, Mac OS X, and Linux (Any) |
 | 11       | Karma                                         | Windows, Mac OS X, and Linux (Any) |
