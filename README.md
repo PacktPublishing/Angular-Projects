@@ -9,7 +9,7 @@ This is the code repository for [Angular Projects](https://www.packtpub.com/web-
 ## What is this book about?
 Angular is one of the best frameworks, not only for building web applications, but also for building applications on other platforms such as desktop and mobile. It is packed with amazing web tools that allow developers to become more productive and make the development experience a happier one
 
-This book covers the following exciting features: <First 5 What you'll learn points>
+This book covers the following exciting features: 
 * Set up Angular applications using Angular CLI and Angular Console
 * Understand lazy loading using dynamic imports for routing
 * Perform server-side rendering by building an SEO application
