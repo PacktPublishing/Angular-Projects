@@ -25,7 +25,7 @@
     "@types/lodash": "^4.14.121",
     "@webcomponents/custom-elements": "^1.0.0",
     "core-js": "^2.5.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "lodash-es": "^4.17.11",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
