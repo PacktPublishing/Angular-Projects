@@ -1,6 +1,6 @@
 # Angular Projects
 
-<a href="https://www.packtpub.com/web-development/angular-projects?utm_source=github&utm_medium=repository&utm_campaign=9781838559359"><img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781838559359-original.jpeg" alt="Angular Projects" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/web-development/angular-projects?utm_source=github&utm_medium=repository&utm_campaign=9781838559359"><img src="https://static.packt-cdn.com/products/9781838559359/cover/smaller" alt="Angular Projects" height="256px" align="right"></a>
 
 This is the code repository for [Angular Projects](https://www.packtpub.com/web-development/angular-projects?utm_source=github&utm_medium=repository&utm_campaign=9781838559359), published by Packt.
 
