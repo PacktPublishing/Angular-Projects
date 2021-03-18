@@ -77,7 +77,3 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 **Zama Khan Mohammed**
 is a software architect, building enterprise web applications, with more than 7 years of experience. He has a master's degree in computer science and has loads of experience in software development using technologies such as Angular, React, and AWS. He has a keen interest in software development as well as machine learning, and he is passionate about teaching his interests to others and mentoring.
 
-
-### Suggestions and Feedback
-[Click here](https://docs.google.com/forms/d/e/1FAIpQLSdy7dATC6QmEL81FIUuymZ0Wy9vH1jHkvpY57OiMeKGqib_Ow/viewform) if you have any feedback or suggestions.
-
