@@ -77,3 +77,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 **Zama Khan Mohammed**
 is a software architect, building enterprise web applications, with more than 7 years of experience. He has a master's degree in computer science and has loads of experience in software development using technologies such as Angular, React, and AWS. He has a keen interest in software development as well as machine learning, and he is passionate about teaching his interests to others and mentoring.
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781838559359">https://packt.link/free-ebook/9781838559359 </a> </p>
