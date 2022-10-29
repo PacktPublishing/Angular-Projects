@@ -1,0 +1,4 @@
+<ActionBar [title]="'CHOOSE_LANG' | translate" class="action-bar">
+	<ActionItem [nsRouterLink]="['/news']" ios.position="right" [text]="'NEXT' | translate"></ActionItem>
+</ActionBar>
+<ListPicker [items]="languages" [(ngModel)]="languageSelected" (selectedIndexChange)="setLanguage($event)"></ListPicker>

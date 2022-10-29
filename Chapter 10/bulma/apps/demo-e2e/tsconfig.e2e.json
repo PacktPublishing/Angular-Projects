@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "sourceMap": false,
-    "outDir": "../../dist/out-tsc/apps/demo-e2e/src"
-  },
-  "include": ["src/**/*.ts"]
-}

@@ -1,0 +1,11 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+      <mat-toolbar color="primary">
+          <span>Electronic Store</span>
+          <span class="spacer"></span>
+          <ng-content select="[right]"></ng-content>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

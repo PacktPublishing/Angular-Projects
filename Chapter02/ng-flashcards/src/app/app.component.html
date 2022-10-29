@@ -1,0 +1,39 @@
+<form #flashForm="ngForm">
+	<h1 class="is-size-3">{{editing ? 'Edit': 'Add New'}} Flash Card</h1>
+	<div class="field">
+		<label class="label" for="">Question</label>
+    <div class="control">
+      <input required class="input" type="text" name="question" #questionEl="ngModel" [ngClass]="{'is-danger': questionEl.invalid && !questionEl.pristine}" [(ngModel)]="flash.question">
+    </div>
+  </div>
+  <div class="field">
+	<label for="" class="label">Answer</label>
+	<div class="control">
+    <input required class="input" type="text" name="answer" #answerEl="ngModel" [ngClass]="{'is-danger': answerEl.invalid && !answerEl.pristine}" [(ngModel)]="flash.answer">
+  </div>
+</div>
+
+
+
+  <button *ngIf="editing; else submitBtn" class="button is-primary" type="submit" (click)="handleUpdate()" [disabled]="flashForm.invalid">Update</button>
+  <ng-template #submitBtn>
+<button  class="button is-primary" type="submit" (click)="handleSubmit()" [disabled]="flashForm.invalid">Submit</button>
+  </ng-template>
+  <button *ngIf="editing; else clearBtn" class="button clear-btn" (click)="handleCancel()">Cancel</button>
+  <ng-template #clearBtn>
+    <button class="button clear-btn" (click)="handleClear()">Clear</button>
+  </ng-template>
+</form>
+
+<button class="button">Reset</button>
+
+<div class="flashs" *ngIf="flashs$ | async as flashs">
+  <app-flash
+    *ngFor="let flash of flashs; trackBy trackByFlashId"
+    [flash]="flash"
+    (toggleCard)="handleToggleCard($event)"
+    (delete)="handleDelete($event)"
+    (edit)="handleEdit($event)"
+    (rememberedChange)="handleRememberedChange($event)"
+  ></app-flash>
+</div>
